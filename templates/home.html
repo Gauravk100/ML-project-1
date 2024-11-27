@@ -1,0 +1,168 @@
+<html>
+   <head> <link rel="stylesheet" type="text/css" href="styles.css"></head>
+<body>
+    <div class="login">
+       <h1>FWI Prediction</h1>
+   
+        <!-- Main Input For Receiving Query to our ML -->
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+         <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
+           <input type="text" name="RH" placeholder="RH" required="required" /><br>
+           <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
+           <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
+           <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br>
+           <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
+           <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
+           <input type="text" name="Classes" placeholder="Classes" required="required" /><br>
+           <input type="text" name="Region" placeholder="Region" required="required" /><br>
+   
+   
+   
+           <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+       </form>
+    <h2>
+       THE FWI prediction is {{result}}
+    </h2>
+   <body>
+</html>
+<style>
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .container {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      height: 300px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 36px; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      color: #6200ea;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 10px 0;
+      font-weight: bold;
+     
+    }
+     h2 {
+       text-align: center;
+       font-size: 28px;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       color: #6200ea;
+       margin-bottom: 20px;
+       font-weight: 400;
+       letter-spacing: 1px;
+       text-transform: capitalize;
+       padding: 10px 0;
+       background: white;
+     }
+     
+     
+    
+    
+    .input-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    input[type="text"] {
+      width: 70%;
+      padding: 10px;
+      background-color: #333333;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      outline: none;
+    }
+    
+    button {
+      width: 25%;
+      padding: 10px;
+      background-color: #6200ea;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: block; 
+      margin: 0 auto;
+    }
+    
+    button:hover {
+      background-color: #3700b3;
+    }
+    
+    
+    li.completed {
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+    
+    li button {
+      background-color: #d32f2f;
+      border: none;
+      padding: 5px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    li button:hover {
+      background-color: #b71c1c;
+    }
+    
+    
+    form {
+       max-width: 800px;
+       margin: 0 auto;
+       padding: 20px;
+      
+       border-radius: 8px;
+       
+       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+       display: flex;
+       flex-wrap: wrap;
+       gap: 10px;
+       justify-content: space-between;
+      
+    }
+    form input {
+       flex: 1 1 calc(20% - 10px);
+       min-width: 150px;
+       padding: 10px;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+       font-size: 16px;
+     }
+     form button{
+       width: 100%;
+       padding: 10px;
+       background-color: #6200ea;
+       color: #fff;
+       border: none;
+       border-radius: 5px;
+       font-size: 16px;
+       cursor: pointer;
+       transition: background-color 0.3s;
+     }
+</style>
