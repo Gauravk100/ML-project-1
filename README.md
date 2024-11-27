@@ -1,4 +1,4 @@
-# Algerian Forest Fires Prediction Project
+# Forest Fires Prediction Project
 
 ## Live Link- https://forest-fires-prediction.onrender.com/
 
