@@ -1,5 +1,7 @@
 # Algerian Forest Fires Prediction Project
 
+## Deployed URL- https://forest-fires-prediction.onrender.com/
+
 ## Description
 
 This machine learning project uses regression techniques to predict forest fire occurrences in Algeria based on various environmental features. The model is trained on the Algerian Forest Fires Dataset, utilizing Python libraries such as pandas, scikit-learn, matplotlib, numpy, seaborn, and flask for data analysis, visualization, and model deployment.
